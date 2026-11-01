@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Chatbot</title>
+
+<style>
+body {
+font-family: Arial, sans-serif;
+background: linear-gradient(to left, red, orange, yellow, green, blue, indigo, violet);
+display: flex;
+justify-content: center;
+align-items: center;
+color: #fff;
+}
+
+.chat-container {
+width: 400px;
+background: #070617;
+border-radius: 10px;
+display: flex;
+flex-direction: column;
+overflow: hidden;
+}
+
+.chat-header {
+padding: 15px;
+background: navy;
+text-align: center;
+font-weight: bold;
+}
+
+.chat-messages {
+flex: 1;
+padding: 10px;
+overflow-y: auto;
+}
+
+.message {
+margin: 8px 0;
+padding: 8px 12px;
+border-radius: 8px;
+max-width: 80%;
+}
+
+.user {
+background: #2563eb;
+align-self: flex-end;
+}
+
+.bot {
+background: #334155;
+align-self: flex-start;
+}
+
+.chat-input {
+display: flex;
+border-top: 1px solid #1e293b;
+}
+
+.chat-input input {
+flex: 1;
+padding: 10px;
+border: none;
+outline: none;
+}
+
+.chat-input button {
+padding: 10px 15px;
+background: #22c55e;
+border: none;
+cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="chat-container">
+<div class="chat-header">AI Assistant</div>
+
+<div class="chat-messages" id="messages"><p id="answer1" style ="display:none;">Coder-R (Osalumhense Righteousness)</p><p id="answer2" style ="display:none;">Ai chatbot of Coder-R's Website</p><p id="answer3" style ="display:none;">Just press the home button on the webpage to get started with the amazing things to do on the Website</p></div>
+
+<div class="chat-input">
+<button 
+onclick="document.getElementById('answer1').style.display='block'"><a href="#" onclick="document.getElementById('answer2').style.display='none'">who created you</a></button>
+<button 
+onclick="document.getElementById('answer2').style.display='block'"><a href="#" onclick="document.getElementById('answer1').style.display='none'"><p onclick="document.getElementById('answer3').style.display='none'">who are you</p></button>
+<button 
+onclick="document.getElementById('answer3').style.display='block'"><a href="#" onclick="document.getElementById('answer2').style.display='none'">How to use Coder-R's Website</button>
+</div>
+</div>
+<br /><br /><br />
+
+<a href="dms.html">Return to webpage</a>
+</body>
+</html>

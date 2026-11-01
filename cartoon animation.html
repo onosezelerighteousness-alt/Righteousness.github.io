@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cartoon Animation</title>
+
+<style>
+body {
+background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+/* Cartoon Container */
+.cartoon {
+position: relative;
+animation: bounce 2s infinite;
+}
+
+/* Head */
+.head {
+width: 110px;
+height: 110px;
+background: #ffcc99;
+border-radius: 50%;
+position: relative;
+}
+
+/* Eyes */
+.eye {
+width: 15px;
+height: 15px;
+background: #000;
+border-radius: 50%;
+position: absolute;
+top: 40px;
+}
+.eye.left { left: 30px; }
+.eye.right { right: 30px; }
+
+/* Mouth */
+.mouth {
+width: 40px;
+height: 20px;
+border-bottom: 4px solid #000;
+border-radius: 0 0 40px 40px;
+position: absolute;
+bottom: 30px;
+left: 40px;
+}
+
+/* Body */
+.body {
+width: 80px;
+height: 90px;
+background: #ff5733;
+margin: 0 auto;
+border-radius: 20px;
+}
+
+/* Arm */
+.arm {
+width: 60px;
+height: 15px;
+background: #ffcc99;
+position: absolute;
+top: 150px;
+right: -50px;
+transform-origin: left center;
+animation: wave 2s infinite;
+}
+
+/* Animations */
+@keyframes wave {
+0% { transform: rotate(0deg); }
+50% { transform: rotate(-40deg); }
+100% { transform: rotate(0deg); }
+}
+
+@keyframes bounce {
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-15px); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="cartoon">
+<div class="head">
+<div class="eye left"></div>
+<div class="eye right"></div>
+<div class="mouth"></div>
+</div>
+<div class="body"></div>
+<div class="arm"></div>
+</div>
+
+
+<div class="cartoon">
+<div class="head">
+<div class="eye left"></div>
+<div class="eye right"></div>
+<div class="mouth"></div>
+</div>
+<div class="body"></div>
+<div class="arm"></div>
+</div>
+
+<script>
+// Optional JavaScript interaction
+document.querySelector(".cartoon").addEventListener("click", () => {
+alert("👋 Hello from your cartoon!");
+});
+</script>
+<a href="home.html">Return to home</a>
+</body>
+</html>

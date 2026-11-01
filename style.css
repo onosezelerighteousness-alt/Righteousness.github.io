@@ -1,0 +1,12 @@
+body{
+	background: #079993;
+	align-items: center;
+}
+form{
+	justify-self: center;
+	align-self: center;
+	font-size: 45;
+}
+a{
+	color: black;
+}

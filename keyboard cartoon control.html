@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Keyboard Cartoon Control</title>
+
+<style>
+body {
+background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+height: 100vh;
+overflow: hidden;
+margin: 0;
+}
+
+/* Cartoon */
+.cartoon {
+position: absolute;
+bottom: 50px;
+left: 100px;
+transition: transform 0.1s;
+}
+
+/* Head */
+.head {
+width: 140px;
+height: 140px;
+background: #ffcc99;
+border-radius: 50%;
+position: relative;
+}
+
+/* Eyes */
+.eye {
+width: 18px;
+height: 18px;
+background: #000;
+border-radius: 50%;
+position: absolute;
+top: 40px;
+}
+.eye.left { left: 30px; }
+.eye.right { right: 30px; }
+
+/* Mouth */
+.mouth {
+width: 60px;
+height: 40px;
+border-bottom: 4px solid #000;
+border-radius: 0 0 40px 40px;
+position: absolute;
+bottom: 30px;
+left: 40px;
+}
+
+/* Body */
+.body {
+width: 100px;
+height: 200px;
+background: #ff5733;
+margin: 0 auto;
+border-radius: 20px;
+text-align: center;
+align-items: center;
+justify-content: center;
+}
+
+/* Arm */
+.arm {
+width: 80px;
+height: 35px;
+background: #ffcc99;
+position: absolute;
+top: 200px;
+right: -65px;
+transform-origin: left center;
+}
+
+
+
+/* Animations */
+.wave {
+animation: wave 0.5s infinite;
+}
+
+@keyframes wave {
+0% { transform: rotate(0deg); }
+50% { transform: rotate(-40deg); }
+100% { transform: rotate(0deg); }
+}
+
+.jump {
+animation: jump 0.5s ease;
+}
+
+@keyframes jump {
+0% { transform: translateY(0); }
+50% { transform: translateY(-120px); }
+100% { transform: translateY(0); }
+}
+
+.crouch {
+transform: scaleY(0.8);
+}
+</style>
+</head>
+
+<body>
+
+<div class="cartoon" id="cartoon">
+<div class="head">
+<div class="eye left"></div>
+<div class="eye right"></div>
+<div class="mouth"></div>
+</div>
+<div class="body">ArrowUp-bounce<br />ArrowDown-crouch<br />ArrowLeft-move left<br/>ArrowRight-move right</div>
+<div class="arm" id="arm"></div>
+</div>
+
+<script>
+const cartoon = document.getElementById("cartoon");
+const arm = document.getElementById("arm");
+
+let x = 100;
+const speed = 20;
+
+document.addEventListener("keydown", (e) => {
+switch (e.key) {
+case "ArrowRight":
+x += speed;
+cartoon.style.left = x + "px";
+break;
+
+case "ArrowLeft":
+x -= speed;
+cartoon.style.left = x + "px";
+break;
+
+case "ArrowUp":
+cartoon.classList.add("jump");
+setTimeout(() => cartoon.classList.remove("jump"), 500);
+break;
+
+case "ArrowDown":
+cartoon.classList.add("crouch");
+break;
+
+case " ":
+arm.classList.add("wave");
+break;
+}
+});
+
+document.addEventListener("keyup", (e) => {
+if (e.key === "ArrowDown") {
+cartoon.classList.remove("crouch");
+}
+if (e.key === " ") {
+arm.classList.remove("wave");
+}
+});
+</script>
+<br /><br /><a href="New.html">Return to Games</a>
+</body>
+</html>

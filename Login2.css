@@ -1,0 +1,13 @@
+*{
+margin: o;
+padding: o;
+box-sizing: border-box;
+font-family: "poppins", serif:
+
+}
+body{
+	display: flex;
+	background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+	color: #333;
+}
+
